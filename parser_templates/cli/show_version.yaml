@@ -77,7 +77,7 @@
       - key: model
         value: "{{ model.matches.0 }}"
       - key: reload_reason
-        value: "{{ reload_reason.matches.0 | lower }}"
+        value: "{{ reload_reason.matches.0 |default('no reason')|lower }}"
       - key: uptime
         value: "{{ uptime.matches.0 }}"
       - key: uptime_split
