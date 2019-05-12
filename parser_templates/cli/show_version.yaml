@@ -30,6 +30,11 @@
     regex: "^System restarted at (?P<time>\\d+:\\d+:\\d+) (?P<tz>\\S+)"
   register: restart_conditions
 
+- name: match System returned to ROM
+  pattern_match:
+    regex: "^System returned to ROM by (\\S+)"
+  register: return_rom
+
 - name: match reload reason
   pattern_match:
     regex: "^Last reload reason: (\\S+)"
@@ -86,7 +91,9 @@
       - key: restart_tz
         value: "{{ restart_conditions.tz }}"
       - key: reload_reason
-        value: "{{ reload_reason.matches.0 | lower }}"
+        value: "{{ reload_reason.matches.0 | default('no reason') | lower }}"
+      - key: return_rom
+        value: "{{ return_rom.matches.0 | default('no reason') | lower }}"
       - key: uptime
         value: "{{ uptime.matches.0 }}"
       - key: uptime_split
