@@ -1,0 +1,18 @@
+---
+### IOS 15.1(4)M4
+- name: 15.1(4)M4 - parse `show license`
+  command_parser:
+    file: "{{ playbook_dir }}/../parser_templates/cli/show_license.yaml"
+    content: "{{ lookup('file', '{{ playbook_dir }}/parser_templates/cli/show_license/15.1.4.txt') }}"
+
+- name: 15.1.4.txt - test `show license` parser
+  assert:
+    that:
+      - license.hseck9.license_count == 'Non-Counted'
+      - license['cme-srst']['license_type'] == 'EvalRightToUse'
+
+### Done
+
+- name: all tests complete
+  debug:
+    msg: "All tests for `show license` passed"
