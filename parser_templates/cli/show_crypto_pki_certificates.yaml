@@ -1,0 +1,80 @@
+---
+
+- name: show_crypto_pki_certificates
+  parser_metadata:
+    version: 1.0
+    command: "show crypto pki certificates"
+    network_os: ios
+
+- name: match certificate sections
+  register: cert_section
+  pattern_match:
+    regex: "^(?:CA\\s+|)Certificate$"
+    match_all: true
+    match_greedy: true
+
+- name: match certificate  values
+  loop: "{{ cert_section }}"
+  register: cert_section_values
+  pattern_group:
+
+    - name: match serial number
+      pattern_match:
+        regex: "Certificate Serial Number \\(hex\\): ([0-9A-Fa-f]+)"
+        content: "{{ item }}"
+      register: serial_no
+
+    - name: match status
+      pattern_match:
+        regex: "Status:\\s+(.*)"
+        content: "{{ item }}"
+      register: status
+
+    - name: match usage
+      pattern_match:
+        regex: "Certificate Usage: (.*)"
+        content: "{{ item }}"
+      register: usage
+    
+    - name: match start date
+      pattern_match:
+        regex: "start date:\\s+(.*)"
+        content: "{{ item }}"
+      register: start_date
+
+    - name: match end date
+      pattern_match:
+        regex: "end\\s+date:\\s+(.*)"
+        content: "{{ item }}"
+      register: end_date
+
+    - name: match Trustpoints
+      pattern_match:
+        regex: "Associated Trustpoints: (.*)"
+        content: "{{ item }}"
+      register: trustpoints
+
+
+- name: template cert-instances
+  register: certificates
+  extend: cisco_ios
+  export: True
+  export_as: list
+  loop: "{{ cert_section_values }}"
+  loop_control:
+    loop_var: cert_item
+  json_template:
+    template:
+          - key: status
+            value: "{{ cert_item.status.matches.0 }}"
+          - key: serial_no
+            value: "{{ cert_item.serial_no.matches.0 }}"
+          - key: usage
+            value: "{{ cert_item.usage.matches.0 }}"
+          - key: start_date
+            value: "{{ cert_item.start_date.matches.0 }}"  
+          - key: end_date
+            value: "{{ cert_item.end_date.matches.0 }}"
+          - key: trustpoints
+            value: "{{ cert_item.trustpoints.matches.0 }}"    
+    
