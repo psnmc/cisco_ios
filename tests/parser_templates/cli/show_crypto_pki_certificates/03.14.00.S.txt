@@ -1,0 +1,74 @@
+Certificate
+  Status: Available
+  Certificate Serial Number (hex): 01E5A2FB
+  Certificate Usage: General Purpose
+  Issuer: 
+    cn=ACT2 SUDI CA
+    o=Cisco
+  Subject:
+    Name: IR829GW-LTE-GA-ZK9
+    Serial Number: PID:IR829GW-LTE-GA-ZK9 SN:FGL213892JK
+    cn=IR829GW-LTE-GA-ZK9
+    ou=ACT-2 Lite SUDI
+    o=Cisco
+    serialNumber=PID:IR829GW-LTE-GA-ZK9 SN:FGL213892JK
+  Validity Date: 
+    start date: 03:17:39 UTC Sep 21 2017
+    end   date: 06:25:41 UTC May 15 2029
+  Associated Trustpoints: CISCO_IDEVID_SUDI 
+
+CA Certificate
+  Status: Available
+  Certificate Serial Number (hex): 61096E7D00000000000C
+  Certificate Usage: Signature
+  Issuer: 
+    cn=Cisco Root CA 2048
+    o=Cisco Systems
+  Subject: 
+    cn=ACT2 SUDI CA
+    o=Cisco
+  CRL Distribution Points: 
+    http://www.cisco.com/security/pki/crl/crca2048.crl
+  Validity Date: 
+    start date: 03:56:57 UTC Jul 1 2011
+    end   date: 06:25:42 UTC May 15 2029
+  Associated Trustpoints: CISCO_IDEVID_SUDI 
+
+CA Certificate
+  Status: Available
+  Certificate Serial Number (hex): 5FF87B282B54DC8D42A315B568C9ADFF
+  Certificate Usage: Signature
+  Issuer: 
+    cn=Cisco Root CA 2048
+    o=Cisco Systems
+  Subject: 
+    cn=Cisco Root CA 2048
+    o=Cisco Systems
+  Validity Date: 
+    start date: 06:17:12 UTC May 15 2004
+    end   date: 06:25:42 UTC May 15 2029
+  Associated Trustpoints: CISCO_IDEVID_SUDI0 Trustpool 
+
+Certificate
+  Status: Available
+  Certificate Serial Number (hex): 7484EBAE000000000F8F
+  Certificate Usage: General Purpose
+  Issuer: 
+    cn=vha-sca-pr-01
+    dc=psnmc
+    dc=qld
+    dc=gov
+    dc=au
+  Subject:
+    Name: DERRMA4G_R1.psnmc.qld.gov.au
+    hostname=DERRMA4G_R1.psnmc.qld.gov.au
+  CRL Distribution Points: 
+    http://vir-crs-pr-01.psnmc.qld.gov.au/crl/vha-sca-pr-01.crl
+    ldap:///CN=vha-sca-pr-01,CN=VHA-SCA-MC-01,CN=CDP,CN=Public%20Key%20Services,CN=Services,CN=Configuration,DC=psnmc,DC=qld,DC=gov,DC=au?certificateRevocationList?base?objectClass=cRLDistributionPoint
+  Validity Date: 
+    start date: 12:40:48 UTC Sep 21 2018
+    end   date: 11:20:38 UTC Jan 15 2020
+  Associated Trustpoints: vha-sca-pr-01.psnmc.qld.gov.au 
+  Storage: nvram:vha-sca-pr-0#F8F.cer
+
+
