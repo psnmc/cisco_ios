@@ -1,0 +1,46 @@
+Index 1 Feature: appxk9                         
+	Period left: Life time
+	License Type: Permanent
+	License State: Active, In Use
+	License Count: Non-Counted
+	License Priority: Medium
+Index 2 Feature: uck9                           
+	Period left: Not Activated
+	Period Used: 0  minute  0  second  
+	License Type: EvalRightToUse
+	License State: Active, Not in Use, EULA not accepted
+	License Count: Non-Counted
+	License Priority: None
+Index 3 Feature: securityk9                     
+	Period left: Life time
+	License Type: Permanent
+	License State: Active, In Use
+	License Count: Non-Counted
+	License Priority: Medium
+Index 4 Feature: ipbasek9                       
+	Period left: Life time
+	License Type: Permanent
+	License State: Active, In Use
+	License Count: Non-Counted
+	License Priority: Medium
+Index 5 Feature: cme-srst                       
+	Period left: Not Activated
+	Period Used: 0  minute  0  second  
+	License Type: EvalRightToUse
+	License State: Active, Not in Use, EULA not accepted
+	License Count: 0/0  (In-use/Violation)
+	License Priority: None
+Index 6 Feature: hseck9                         
+	Period left: Life time
+	License Type: Permanent
+	License State: Active, In Use
+	License Count: Non-Counted
+	License Priority: Medium
+Index 7 Feature: throughput                     
+	Period left: Not Activated
+	Period Used: 0  minute  0  second  
+	License Type: EvalRightToUse
+	License State: Active, Not in Use, EULA not accepted
+	License Count: Non-Counted
+	License Priority: None
+Index 8 Feature: internal_service 
